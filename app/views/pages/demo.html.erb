@@ -1,0 +1,129 @@
+<div class="row">
+    <div class="col-md-6">
+        <!-- line chart canvas element -->
+        <h3>Overall</h3>
+        <canvas id="overall" width="600" height="400"></canvas>
+    </div>
+    <div class="col-md-6">
+    <h3>Assessment</h3>
+    <!-- pie chart canvas element -->
+    <canvas id="assessment" width="600" height="400"></canvas>
+    </div>
+</div>
+
+<div class="row">
+<div class="col-md-6">
+<h3>Feedback and communication</h3>
+<!-- bar chart canvas element -->
+<canvas id="feedback" width="600" height="400"></canvas>
+</div>
+<div class="col-md-6">
+<h3>Engagement with the learning activities</h3>
+<!-- radar chart canvas element -->
+<canvas id="radar" width="600" height="400"></canvas>
+</div>
+</div>
+
+<script>
+    // line chart data
+    var buyerData = {
+        labels : ["January","February","March","April","May","June"],
+        datasets : [
+        {
+            fillColor : "rgba(172,194,132,0.4)",
+            strokeColor : "#ACC26D",
+            pointColor : "#fff",
+            pointStrokeColor : "#9DB86D",
+            data : [203,156,99,251,305,247]
+        }
+    ]
+    }
+    // get line chart canvas
+    var overall = document.getElementById('overall').getContext('2d');
+    // draw line chart
+    new Chart(overall).Line(buyerData);
+    
+    // pie chart data
+    var pieData = [
+        {
+            value: 20,
+            color:"#878BB6"
+        },
+        {
+            value : 40,
+            color : "#4ACAB4"
+        },
+        {
+            value : 10,
+            color : "#FF8153"
+        },
+        {
+            value : 30,
+            color : "#FFEA88"
+        }
+    ];
+    // pie chart options
+    var pieOptions = {
+         segmentShowStroke : false,
+         animateScale : true,
+         animateRotate : true
+    }
+    // get pie chart canvas
+    var assessment= document.getElementById("assessment").getContext("2d");
+    // draw pie chart
+    new Chart(assessment).Pie(pieData, pieOptions);
+    // bar chart data
+    var barData = {
+        labels : ["January","February","March","April","May","June"],
+        datasets : [
+            {
+                fillColor : "#48A497",
+                strokeColor : "#48A4D1",
+                data : [456,479,324,569,702,600]
+            },
+            {
+                fillColor : "rgba(73,188,170,0.4)",
+                strokeColor : "rgba(72,174,209,0.4)",
+                data : [364,504,605,400,345,320]
+            }
+        ]
+    }
+    // get bar chart canvas
+    var feedback = document.getElementById("feedback").getContext("2d");
+    // draw bar chart
+    new Chart(feedback).Bar(barData);
+
+    // radar chart data
+
+    var data = {
+        labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+        datasets: [
+            {
+                label: "My First dataset",
+                fillColor: "rgba(220,220,220,0.2)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: [65, 59, 90, 81, 56, 55, 40]
+            },
+            {
+                label: "My Second dataset",
+                fillColor: "rgba(151,187,205,0.2)",
+                strokeColor: "rgba(151,187,205,1)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,205,1)",
+                data: [28, 48, 40, 19, 96, 27, 100]
+            }
+        ]
+    };
+
+    // get radar chart canvas
+    var radar = document.getElementById("radar").getContext("2d");
+    // draw bar chart
+    new Chart(radar).Radar(data);
+
+</script>

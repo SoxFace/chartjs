@@ -1,0 +1,27 @@
+{
+  "name": "use-app",
+  "version": "4.2.0",
+  "authors": [
+    "soxface <sonyacorcoran@gmail.com>"
+  ],
+  "description": "Charting USE Data",
+  "main": "index.html.erb",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "use",
+    "data",
+    "chartjs"
+  ],
+  "license": "MIT",
+  "homepage": "localhost:3000",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ]
+}
